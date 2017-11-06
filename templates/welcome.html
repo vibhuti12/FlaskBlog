@@ -1,0 +1,11 @@
+<!doctype html>
+<body>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <h4> {{message}}</h4>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <h1>Hello, {{ username_template}}</h1>
+</body>
