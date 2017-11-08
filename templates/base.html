@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% block head %}
+    <title> {% block title %} {% endblock %}- First Flask Application </title>
+    {% endblock %}
+</head>
+<body>
+    <h1> First Flask Application</h1>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul class="flashes"
+    {% for message in messages %}
+    <li>{{message}}</li>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    
+    <div id = "content">
+        {% block content %} {% endblock %}
+    </div>
+    <footer>
+        Footer starts here 
+    </footer>
+    
+</body>
+</html>
